@@ -39,4 +39,18 @@ export class LoanCalculatorComponent {
            this.loanRequest.years > 0 &&
            this.loanRequest.monthlyPayment > 0;
   }
+  
+  openHelp() {
+    const modal = document.getElementById('helpModal');
+    if (modal) {
+      modal.style.display = 'block';
+    }
+  }
+
+  closeHelp() {
+    const modal = document.getElementById('helpModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+  }
 }

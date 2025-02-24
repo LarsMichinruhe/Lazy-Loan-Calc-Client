@@ -1,5 +1,5 @@
 <div id="main">
-  <h2>EOS goes BWS: Lazy Loan Calc 1.0</h2>
+  <h2>EOS goes BWS: Lazy Loan Calc 1.0</h2>    
     <form #loanForm="ngForm" (ngSubmit)="calculateLoan(loanForm)">
     <div>
       <label>Kreditsumme in Euro:</label>
@@ -29,7 +29,10 @@
         Tilgungsrate muss größer als 0 sein.
       </span>
     </div>
-    <button type="submit">Berechnen</button>
+     <div class="button-container">
+      <button type="submit">Berechnen</button>
+      <button type="button" (click)="openHelp()">Hilfe</button>
+    </div>
   </form>
 
   <div *ngIf="loanResponse">
@@ -55,5 +58,26 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<div id="helpModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeHelp()">&times;</span>
+    <h2>Hilfe</h2>
+    <p>Um das Formular auszufüllen, geben Sie bitte die folgenden Informationen ein:</p>
+    <ul>
+      <li><strong>Kreditsumme in Euro:</strong> Der Gesamtbetrag des Kredits, den Sie aufnehmen möchten. Dieser Wert muss größer als 0 sein.</li>
+      <li><strong>Zinssatz in Prozent:</strong> Der jährliche Zinssatz des Kredits. Dieser Wert muss größer als 0 sein.</li>
+      <li><strong>Laufzeit in Jahren:</strong> Die Anzahl der Jahre, über die der Kredit zurückgezahlt wird. Dieser Wert muss größer als 0 sein.</li>
+      <li><strong>Monatliche Tilgungsrate:</strong> Der Betrag, den Sie monatlich zurückzahlen möchten. Dieser Wert muss größer als 0 sein.</li>
+    </ul>
+    <p>Nachdem Sie alle Felder ausgefüllt haben, klicken Sie auf "Berechnen", um die Ergebnisse zu sehen.</p>
+    <p>Die Ergebnisse umfassen:</p>
+    <ul>
+      <li><strong>Monatliche Ratenhöhe:</strong> Der Betrag, den Sie monatlich zahlen müssen.</li>
+      <li><strong>Gesamte Zinsbelastung:</strong> Der Gesamtbetrag der Zinsen, die Sie über die Laufzeit des Kredits zahlen werden.</li>
+      <li><strong>Tilgungsplan:</strong> Eine detaillierte Aufschlüsselung der monatlichen Zahlungen, einschließlich Tilgungsanteil, Zinsanteil und Restschuld.</li>
+    </ul>
   </div>
 </div>
