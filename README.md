@@ -20,11 +20,11 @@ To get started with the BWS Learning Client, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/bws-learning-client.git
+    git clone https://github.com/LarsMichinruhe/Lazy-Loan-Calc-Client.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd bws-learning-client
+    cd Lazy-Loan-Calc-Client
     ```
 3. Install the dependencies:
     ```bash
