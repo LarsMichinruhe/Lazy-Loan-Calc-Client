@@ -1,0 +1,41 @@
+#main {
+ 	width: 600px;
+	margin: 0 auto;
+ }
+
+form {
+	background-color: #f2f2f2;
+	padding: 12px;
+	border: 1px solid black;
+}
+
+form div {
+	margin-bottom: 10px;
+}
+
+label {
+	width: 160px; /* Set a fixed width */
+	display: inline-block; /* Ensure the label maintains its width */
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 8px;
+	text-align: right;
+}
+
+#resultTable {
+	background-color: #f2f2f2;
+}
+#resultTable thead {
+	background-color:darkgray;
+	color:white;
+}

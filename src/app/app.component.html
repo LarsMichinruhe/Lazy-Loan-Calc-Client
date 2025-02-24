@@ -1,0 +1,47 @@
+<div id="main">
+  <h2>EOS goes BWS: Lazy Loan Calc 1.0</h2>
+  <form (ngSubmit)="calculateLoan()">
+    <div>
+      <label>Kreditsumme in Euro:</label>
+      <input type="number" [(ngModel)]="loanRequest.principal" name="principal" required>
+    </div>
+    <div>
+      <label>Zinssatz in Prozent:</label>
+      <input type="number" [(ngModel)]="loanRequest.annualInterestRate" name="annualInterestRate" required>
+    </div>
+    <div>
+      <label>Laufzeit in Jahren:</label>
+      <input type="number" [(ngModel)]="loanRequest.years" name="years" required>
+    </div>
+    <div>
+      <label>Monatliche Tilgungsrate:</label>
+      <input type="number" [(ngModel)]="loanRequest.monthlyPayment" name="monthlyPayment" required>
+    </div>
+    <button type="submit">Berechnen</button>
+  </form>
+
+  <div *ngIf="loanResponse">
+    <h3>Ergebnisse</h3>
+    <p>Monatliche Ratenhöhe: {{ loanResponse.monthlyPayment | currency:'EUR' }}</p>
+    <p>Gesamte Zinsbelastung: {{ loanResponse.totalInterest | currency:'EUR' }}</p>
+    <h4>Tilgungsplan</h4>
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Monat</th>
+          <th>Tilgungsanteil</th>
+          <th>Zinsanteil</th>
+          <th>Restschuld</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of loanResponse.amortizationSchedule">
+          <td>{{ entry.month }}</td>
+          <td>{{ entry.principalPayment | currency:'EUR' }}</td>
+          <td>{{ entry.interestPayment | currency:'EUR' }}</td>
+          <td>{{ entry.remainingBalance | currency:'EUR' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
