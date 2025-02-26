@@ -30,7 +30,7 @@ describe('LoanCalculatorComponent', () => {
       principal: 10000,
       annualInterestRate: 5,
       years: 10,
-      monthlyPayment: 200
+      annualRepaymentRate: 200
     };
 
     fixture.detectChanges();

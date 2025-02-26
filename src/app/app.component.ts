@@ -15,7 +15,7 @@ export class LoanCalculatorComponent {
     principal: 0,
     annualInterestRate: 0,
     years: 0,
-    monthlyPayment: 0
+    annualRepaymentRate: 0
   };
   loanResponse: any;
 
@@ -37,7 +37,7 @@ export class LoanCalculatorComponent {
     return this.loanRequest.principal > 0 &&
            this.loanRequest.annualInterestRate > 0 &&
            this.loanRequest.years > 0 &&
-           this.loanRequest.monthlyPayment > 0;
+           this.loanRequest.annualRepaymentRate > 0;
   }
   
   openHelp() {
